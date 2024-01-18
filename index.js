@@ -5,12 +5,18 @@ const { StatusCodes } = require('http-status-codes');
 
 app.get('/weekly-temperature', (req, res) => {
     try {
-        
+        const weeklyTemperature = data?.weeklyTemperature;
+      
+        const responseData = weeklyTemperature?.labels?.map((label, index) => ({
+            label,
+            value: weeklyTemperature.data[index],
+        }));
+
         res.status(StatusCodes.OK).json({
             status: 'success',
             statusCode: StatusCodes.OK,
             message: 'Request successful',
-            data: data.weeklyTemperature,
+            data: responseData,
         });
     } catch (error) {
         console.error(error);
@@ -25,11 +31,17 @@ app.get('/weekly-temperature', (req, res) => {
 
 app.get('/employee-salaries', (req, res) => {
     try {
+        const employeeSalaries = data?.employeeSalaries;
+      
+        const responseData = employeeSalaries?.labels?.map((label, index) => ({
+            label,
+            value: employeeSalaries.data[index],
+        }));
         res.status(StatusCodes.OK).json({
             status: 'success',
             statusCode: StatusCodes.OK,
             message: 'Request successful',
-            data: data.employeeSalaries,
+            data: responseData,
         });
     } catch (error) {
         console.error(error);
@@ -44,11 +56,17 @@ app.get('/employee-salaries', (req, res) => {
 
 app.get('/electricity-consumption', (req, res) => {
     try {
+        const electricityConsumption = data?.electricityConsumption;
+      
+        const responseData = electricityConsumption?.labels?.map((label, index) => ({
+            label,
+            value: electricityConsumption.data[index],
+        }));
         res.status(StatusCodes.OK).json({
             status: 'success',
             statusCode: StatusCodes.OK,
             message: 'Request successful',
-            data: data.electricityConsumption,
+            data: responseData,
         });
     } catch (error) {
         console.error(error);
@@ -63,11 +81,17 @@ app.get('/electricity-consumption', (req, res) => {
 
 app.get('/city-population', (req, res) => {
     try {
+        const cityPopulation = data?.cityPopulation;
+      
+        const responseData = cityPopulation?.labels?.map((label, index) => ({
+            label,
+            value: cityPopulation.data[index],
+        }));
         res.status(StatusCodes.OK).json({
             status: 'success',
             statusCode: StatusCodes.OK,
             message: 'Request successful',
-            data: data.cityPopulation,
+            data: responseData,
         });
     } catch (error) {
         console.error(error);

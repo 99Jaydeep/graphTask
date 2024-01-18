@@ -5,7 +5,8 @@ module.exports = {
     },
     employeeSalaries: {
         labels: ['Employee 1', 'Employee 2', 'Employee 3', 'Employee 4', 'Employee 5', 'Employee 6', 'Employee 7', 'Employee 8', 'Employee 9', 'Employee 10'],
-        data: [50000, 60000, 55000, 70000, 80000, 75000, 90000, 85000, 95000, 100000],
+        higestSalary: [50000, 60000, 55000, 70000, 80000, 75000, 90000, 85000, 95000, 100000],
+        lowestSalary: [5000, 8000, 40000, 60000, 9000, 30000, 50000 ,25000, 45000, 20000],
     },
     electricityConsumption: {
         labels: ['Mumbai', 'Pune', 'Nasik', 'Nagpur'],

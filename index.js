@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 const data = require('./data');
 const { StatusCodes } = require('http-status-codes');
+const cors = require('cors');
+
+app.use(cors());
 
 app.get('/weekly-temperature', (req, res) => {
     try {
@@ -35,7 +38,8 @@ app.get('/employee-salaries', (req, res) => {
       
         const responseData = employeeSalaries?.labels?.map((label, index) => ({
             label,
-            value: employeeSalaries.data[index],
+            higestSalary: employeeSalaries.higestSalary[index],
+            lowestSalary: employeeSalaries.lowestSalary[index],
         }));
         res.status(StatusCodes.OK).json({
             status: 'success',
